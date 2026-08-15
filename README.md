@@ -310,3 +310,6 @@ if (formulario) {
     );
 
 }
+<form id="formularioContacto"
+      action="https://formspree.io/f/mbgraoak"
+      method="POST">
