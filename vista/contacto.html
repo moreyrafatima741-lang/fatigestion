@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | FatiGestión</title>
+
+    <meta name="description"
+        content="Contactate con FatiGestión para solicitar asesoramiento y ayuda con la gestión docente.">
+
+    <!-- ENLACE AL CSS -->
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================== ENCABEZADO ==================== -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+
+            <a href="../index.html">
+
+                <img src="multimedial/logo.png"
+                    alt="Logo de FatiGestión">
+
+            </a>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="../index.html">
+                Inicio
+            </a>
+
+            <a href="quien-soy.html">
+                Quién soy
+            </a>
+
+            <a href="servicios.html">
+                Servicios
+            </a>
+
+            <a href="herramientas.html">
+                Herramientas
+            </a>
+
+            <a href="contacto.html" class="activo">
+                Contacto
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+
+    <main>
+
+
+        <!-- ==================== TÍTULO ==================== -->
+
+        <section class="titulo-pagina">
+
+            <p>
+                CONTACTO
+            </p>
+
+            <h1>
+                Hablemos sobre lo que necesitás
+            </h1>
+
+            <span>
+                Contame qué tarea necesitás realizar y
+                buscamos juntos la mejor manera de ayudarte.
+            </span>
+
+        </section>
+
+
+
+        <!-- ==================== CONTACTO ==================== -->
+
+        <section class="contacto">
+
+            <div class="contacto-contenedor">
+
+
+                <!-- ==================== INFORMACIÓN ==================== -->
+
+                <div class="contacto-info">
+
+                    <p class="etiqueta">
+                        PONETE EN CONTACTO
+                    </p>
+
+                    <h2>
+                        Estoy para ayudarte
+                    </h2>
+
+                    <p>
+                        Si necesitás ayuda con una planificación,
+                        una secuencia didáctica o alguna tarea
+                        administrativa, podés comunicarte conmigo.
+                    </p>
+
+                    <p>
+                        Completá el formulario y contame brevemente
+                        qué necesitás. Te responderé a la brevedad.
+                    </p>
+
+
+                    <!-- INFORMACIÓN 1 -->
+
+                    <div class="contacto-dato">
+
+                        <div class="contacto-icono">
+                            📧
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Correo electrónico
+                            </h3>
+
+                            <p>
+                                moreyrafatima741@gmail.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INFORMACIÓN 2 -->
+
+                    <div class="contacto-dato">
+
+                        <div class="contacto-icono">
+                            💬
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Consultas
+                            </h3>
+
+                            <p>
+                                Podés consultar por cualquiera
+                                de los servicios disponibles.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INFORMACIÓN 3 -->
+
+                    <div class="contacto-dato">
+
+                        <div class="contacto-icono">
+                            📝
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Asesoramiento personalizado
+                            </h3>
+
+                            <p>
+                                Cada consulta se analiza de acuerdo
+                                con la necesidad del docente.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================== FORMULARIO ==================== -->
+
+                <div class="contacto-formulario">
+
+                    <h2>
+                        Solicitar asesoramiento
+                    </h2>
+
+                    <p>
+                        Completá los siguientes datos.
+                    </p>
+
+
+                    <form id="formularioContacto"
+                         action="https://formspree.io/f/mbgraoak"
+                         method="POST">    
+
+
+                        <!-- NOMBRE -->
+
+                        <div class="campo">
+
+                            <label for="nombre">
+                                Nombre y apellido
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Escribí tu nombre"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- CORREO -->
+
+                        <div class="campo">
+
+                            <label for="email">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="ejemplo@correo.com"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- SERVICIO -->
+
+                        <div class="campo">
+
+                            <label for="servicio">
+                                ¿En qué necesitás ayuda?
+                            </label>
+
+                            <select
+                                id="servicio"
+                                name="servicio"
+                                required
+                            >
+
+                                <option value="">
+                                    Seleccioná una opción
+                                </option>
+
+                                <option value="planificaciones">
+                                    Planificaciones
+                                </option>
+
+                                <option value="secuencias">
+                                    Secuencias didácticas
+                                </option>
+
+                                <option value="proyectos">
+                                    Proyectos educativos
+                                </option>
+
+                                <option value="evaluaciones">
+                                    Evaluaciones
+                                </option>
+
+                                <option value="papeleo">
+                                    Carga de papeleo
+                                </option>
+
+                                <option value="licencias">
+                                    Carga de licencias
+                                </option>
+
+                                <option value="boletines">
+                                    Boletines digitales
+                                </option>
+
+                                <option value="informacion">
+                                    Carga de información
+                                </option>
+
+                                <option value="documentacion">
+                                    Organización documental
+                                </option>
+
+                                <option value="plataformas">
+                                    Plataformas digitales
+                                </option>
+
+                                <option value="otro">
+                                    Otro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- MENSAJE -->
+
+                        <div class="campo">
+
+                            <label for="mensaje">
+                                Contame qué necesitás
+                            </label>
+
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="6"
+                                placeholder="Escribí tu consulta..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- BOTÓN -->
+
+                        <button
+                            type="submit"
+                            class="boton-enviar"
+                        >
+                            Enviar consulta
+                        </button>
+
+
+                        <!-- MENSAJE DE RESULTADO -->
+
+                        <div
+                            id="mensajeFormulario"
+                            class="mensaje-formulario"
+                        >
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================== PREGUNTA FINAL ==================== -->
+
+        <section class="contacto-final">
+
+            <div>
+
+                <p>
+                    ¿TENÉS UNA DUDA?
+                </p>
+
+                <h2>
+                    No hace falta que sepas por dónde empezar.
+                </h2>
+
+                <span>
+                    Contame qué necesitás y vemos juntos
+                    cómo podemos organizarlo.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="pie">
+
+        <div class="footer-contenido">
+
+
+            <div>
+
+                <h3>
+                    <span>Fati</span>Gestión
+                </h3>
+
+                <p>
+                    Organización, herramientas y
+                    asesoramiento para docentes.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Navegación
+                </h4>
+
+                <a href="../index.html">
+                    Inicio
+                </a>
+
+                <a href="quien-soy.html">
+                    Quién soy
+                </a>
+
+                <a href="servicios.html">
+                    Servicios
+                </a>
+
+                <a href="herramientas.html">
+                    Herramientas
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Contacto
+                </h4>
+
+                <a href="contacto.html">
+                    Solicitar asesoramiento
+                </a>
+
+            </div>
+
+
+        </div>
+
+    
+<!-- WHATSAPP FLOTANTE -->
+
+<a
+    href="https://wa.me/5491136309755"
+    class="whatsapp-flotante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+>
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+        <div>
+
+            <h3>
+                WhatsApp
+            </h3>
+
+            <p>
+                Escribime directamente por WhatsApp.
+            </p>
+
+        </div>
+
+    </a>
+
+</div>
+        <div class="copyright">
+
+            <p>
+                © 2026 FatiGestión — Proyecto realizado por
+                <strong>Fátima Moreyra</strong>.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+<script src="../javascript/script.js"></script>
+
+</body>
+
+</html>
+
+
