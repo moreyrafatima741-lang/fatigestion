@@ -1,0 +1,354 @@
+/* =========================================================
+   FATEGESTIÓN
+   JAVASCRIPT PRINCIPAL
+   ========================================================= */
+
+
+/* =========================================================
+   ORGANIZADOR DE TAREAS
+   ========================================================= */
+
+function agregarTarea() {
+
+    const input = document.getElementById("tareaInput");
+    const lista = document.getElementById("listaTareas");
+
+    if (!input || !lista) {
+        return;
+    }
+
+    const texto = input.value.trim();
+
+    if (texto === "") {
+
+        alert("Por favor, escribí una tarea.");
+
+        return;
+    }
+
+
+    /* Crear elemento */
+
+    const tarea = document.createElement("li");
+
+    tarea.innerHTML = `
+        <span>${texto}</span>
+
+        <button
+            type="button"
+            onclick="eliminarTarea(this)"
+        >
+            Eliminar
+        </button>
+    `;
+
+
+    lista.appendChild(tarea);
+
+    input.value = "";
+
+    input.focus();
+}
+
+
+/* =========================================================
+   ELIMINAR TAREA
+   ========================================================= */
+
+function eliminarTarea(boton) {
+
+    const tarea = boton.parentElement;
+
+    tarea.remove();
+
+}
+
+
+/* =========================================================
+   CALCULADORA DE CALIFICACIONES
+   ========================================================= */
+
+function calcularPromedio() {
+
+    const nota1 = parseFloat(
+        document.getElementById("nota1").value
+    );
+
+    const nota2 = parseFloat(
+        document.getElementById("nota2").value
+    );
+
+    const nota3 = parseFloat(
+        document.getElementById("nota3").value
+    );
+
+    const resultado = document.getElementById(
+        "resultadoPromedio"
+    );
+
+
+    if (
+        isNaN(nota1) ||
+        isNaN(nota2) ||
+        isNaN(nota3)
+    ) {
+
+        resultado.textContent =
+            "Completá las tres notas.";
+
+        return;
+    }
+
+
+    /* Calcular promedio */
+
+    const promedio =
+        (nota1 + nota2 + nota3) / 3;
+
+
+    const promedioRedondeado =
+        promedio.toFixed(2);
+
+
+    /* Mostrar resultado */
+
+    resultado.textContent =
+        `Promedio: ${promedioRedondeado}`;
+
+
+    /* Indicar resultado */
+
+    if (promedio >= 6) {
+
+        resultado.innerHTML +=
+            "<br>✓ Promedio aprobado";
+
+    } else {
+
+        resultado.innerHTML +=
+            "<br>✗ Promedio menor a 6";
+
+    }
+
+}
+
+
+/* =========================================================
+   CALENDARIO / FECHA ACTUAL
+   ========================================================= */
+
+function mostrarFecha() {
+
+    const elemento =
+        document.getElementById("fechaActual");
+
+
+    if (!elemento) {
+        return;
+    }
+
+
+    const fecha = new Date();
+
+
+    const opciones = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    };
+
+
+    const fechaFormateada =
+        fecha.toLocaleDateString(
+            "es-AR",
+            opciones
+        );
+
+
+    elemento.textContent =
+        fechaFormateada;
+}
+
+
+/* Ejecutar calendario */
+
+mostrarFecha();
+
+
+/* =========================================================
+   CHECKLIST DOCENTE
+   ========================================================= */
+
+function activarChecklist() {
+
+    const checks =
+        document.querySelectorAll(
+            ".checklist input[type='checkbox']"
+        );
+
+
+    checks.forEach(function (check) {
+
+        check.addEventListener(
+            "change",
+            function () {
+
+                const texto =
+                    this.parentElement;
+
+
+                if (this.checked) {
+
+                    texto.style.textDecoration =
+                        "line-through";
+
+                    texto.style.opacity =
+                        "0.6";
+
+                } else {
+
+                    texto.style.textDecoration =
+                        "none";
+
+                    texto.style.opacity =
+                        "1";
+
+                }
+
+            }
+        );
+
+    });
+
+}
+
+
+/* Ejecutar checklist */
+
+activarChecklist();
+
+
+/* =========================================================
+   FORMULARIO DE CONTACTO
+   ========================================================= */
+
+const formulario =
+    document.getElementById(
+        "formularioContacto"
+    );
+
+
+if (formulario) {
+
+    formulario.addEventListener(
+        "submit",
+        function (evento) {
+
+            evento.preventDefault();
+
+
+            const nombre =
+                document.getElementById(
+                    "nombre"
+                ).value.trim();
+
+
+            const email =
+                document.getElementById(
+                    "email"
+                ).value.trim();
+
+
+            const servicio =
+                document.getElementById(
+                    "servicio"
+                ).value;
+
+
+            const mensaje =
+                document.getElementById(
+                    "mensaje"
+                ).value.trim();
+
+
+            const respuesta =
+                document.getElementById(
+                    "mensajeFormulario"
+                );
+
+
+            /* Validación */
+
+            if (
+                nombre === "" ||
+                email === "" ||
+                servicio === "" ||
+                mensaje === ""
+            ) {
+
+                respuesta.style.display =
+                    "block";
+
+                respuesta.textContent =
+                    "Por favor, completá todos los campos.";
+
+                return;
+            }
+
+
+            /* Mensaje de éxito */
+
+            respuesta.style.display =
+                "block";
+
+            respuesta.textContent =
+                `¡Gracias, ${nombre}! Tu consulta fue preparada correctamente.`;
+
+
+            /* Limpiar formulario */
+
+            formulario.reset();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ANIMACIÓN SUAVE DE LAS TARJETAS
+   ========================================================= */
+
+const tarjetas =
+    document.querySelectorAll(
+        ".herramienta-card, .servicio-grande, .gestion-card"
+    );
+
+
+tarjetas.forEach(function (tarjeta) {
+
+    tarjeta.addEventListener(
+        "mouseenter",
+        function () {
+
+            this.style.transition =
+                "0.3s ease";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   MENSAJE DE BIENVENIDA EN CONSOLA
+   ========================================================= */
+
+console.log(
+    "FatiGestión - Página cargada correctamente."
+);
+
+console.log(
+    "JavaScript funcionando correctamente."
+);
